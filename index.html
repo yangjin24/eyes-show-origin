@@ -1,0 +1,282 @@
+<!--
+ * @Author: chenamin
+ * @LastModifiedBy: chenamin
+ * @Date: 2022-04-11 10:30:52
+ * @LastEditTime: 2024-06-25 10:24:55
+ * @FilePath: /watermark 5 2/index.html
+ * @Description: file content
+-->
+<!DOCTYPE html>
+<html lang="zh-cn">
+<script>var eye_573f1757ddf9eac3f4eaa4ff3f7587f7 = "eyI4NTA2MjUwMjg0MjU1MCI6IuadqOWwj+iwqCIsIjg1MDYyNTAyODQyNzAwIjoiMTUwNTIzMjAwMjAxMjIxMjA3IiwiODUwNjI1MDI4NDMzNTAiOiIxMzgxMjM0NTY3OCJ9"</script>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+
+    <title>测试水印</title>
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        div, span {
+            font-size: 14px;
+        }
+
+        #app {
+            margin: auto;
+            width: 80%;
+            min-height: 600px;
+            background: #fff;
+            /* padding: 20px; */
+        }
+
+        .t-table {
+            width: 100%;
+            text-align: center;
+            padding-top: 40px;
+        }
+
+        .t-table thead {
+            background: #ccc;
+        }
+
+        .my-css {
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .test-overflow {
+            overflow: hidden;
+        }
+
+        .content-table {
+            width: 600px;
+            position: relative;
+            margin-top: 40px;
+        }
+
+        :root {
+            --background-color: #e5e5e5;
+        }
+
+        #canvans {
+            border: none;
+        }
+
+        #slide-wrap {
+            width: 5px;
+            height: 60px;
+            background-color: var(--background-color);
+            position: absolute;
+            right: 0;
+            top: 30px;
+            border-radius: 5px;
+            transition: all 1s ease;
+            opacity: 0;
+        }
+
+        #slide-wrap:hover {
+            cursor: grab;
+        }
+
+        .slide {
+            width: 5px;
+            height: 60px;
+            background-color: var(--background-color);
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 5px;
+        }
+    </style>
+    <script type="text/javascript" src="./js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="./js/CanvasTable.js"></script>
+    <link rel="stylesheet" href="./js/indexCopy.css" type="text/css"></link>
+    <script type="text/javascript" src="./js/indexCopy.js"></script>
+</head>
+
+<body>
+<div id="app" class="test-overflow">
+    <div style="margin-top: 40px">
+        姓名：⁠杨**‍‌﻿‍‍‍﻿‍‌​​‌‍‌‍‌‌‌‌‌​﻿‍​⁠，手机号：⁠150523**1207‍‌﻿‍‍‍﻿‍‌​​‌‍‌‍‌‌‌‌‍‍‌﻿‌⁠
+    </div>
+    <div id="rrr">
+        <span class="my-css">
+            <span>
+            ⁠150523**1207‍‌﻿‍‍‍﻿‍‌​​‌‍‌‍‌‌‌‌‍‍‌﻿‌⁠
+            </span>
+        </span>
+    </div>
+    <table class="t-table">
+        <thead>
+        <th>
+            ⁠150523**1207‍‌﻿‍‍‍﻿‍‌​​‌‍‌‍‌‌‌‌‍‍‌﻿‌⁠
+        </th>
+        <th>名称</th>
+        <th>备注</th>
+        <th>操作</th>
+        </thead>
+        <tbody>
+        <tr>
+            <td>1</td>
+            <td>⁠150523**1207‍‌﻿‍‍‍﻿‍‌​​‌‍‌‍‌‌‌‌‍‍‌﻿‌⁠</td>
+            <td>介绍信息</td>
+            <td><a>编辑</a> ｜ <a>删除</a></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Tom2</td>
+            <td>介绍****xxxxxxxx介绍信息</td>
+            <td><a>编辑</a> ｜ <a>删除</a></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Tom3</td>
+            <td>介绍信息</td>
+            <td><a>编辑</a> ｜ <a>删除</a></td>
+        </tr>
+        </tbody>
+    </table>
+    <!--<div style="height: 50px;width: 500px;overflow: auto;margin-top: 100px">
+        <div style="height: 100px;width: 100%;"></div>
+        <input value="⁠杨**‍‌﻿‍‍‍﻿‍‌​​‌‍‌‍‌‌‌‌‌​﻿‍​⁠">
+    </div>-->
+    <!--<div class="content-table">
+        <canvas id="canvans" width="600" height="300"></canvas>
+        &lt;!&ndash;-自定义滚动条&ndash;&gt;
+        <div id="slide-wrap" style="transform: translateY(0)">
+            <div class="slide"></div>
+        </div>
+    </div>-->
+
+    <iframe src="https://172.16.43.250:8441/apiAudit/index.html#/"></iframe>
+</div>
+<script type="text/javascript">
+  setTimeout(() => {
+    fetch("https://jsonplaceholder.typicode.com/todos/1")
+      .then(function (response) {
+      })
+      .then(function (json) {
+      });
+  }, 1000)
+  const json1 = {
+    "status": 1,
+    "data": {
+      "china_name": "⁠杨‍‌﻿‍‍‍﻿‍‌​​‌‍‌‍‌‌‌‌‌​﻿‍​⁠",
+      "chinese_address": "北京市海淀区中关村南大街1号",
+      "string": "Hello 中国!",
+      "ipv6_code": "fe80::1c0a:2b0c:3d0e:4f0f%en0",
+      "three_in_one": "91110108712345678X",
+      "id_card": "⁠150523**1207‍‌﻿‍‍‍﻿‍‌​​‌‍‌‍‌‌‌‌‍‍‌﻿‌⁠",
+      "china_nation": "汉族",
+      "mtp_for_taiwai": "12345678",
+      "drivers_license": "110223790813697",
+      "sin_card_code": "1101011990010112349",
+      "meid_code": "A0000049F9A8B6",
+      "vic_number": "LSGHG53H8XN001234",
+      "number": "3.14159",
+      "engine_no": "6G72X123456",
+      "date_time": "2023-07-20",
+      "bl_code": "1101010112345678X",
+      "imei_code": "358239058188990",
+      "officer_number": "01010101",
+      "org_name": "北京百度网讯科技有限公司",
+      "email": "zhangsan@163.com",
+      "chinese_address-1": "内蒙古自治区赤峰市淮海区111号",
+      "bank_account": "6228480123456789012",
+      "trc_code": "110101123456789",
+      "business_name": "北京百度网讯科技有限公司",
+      "china_province": "北京市",
+      "sex": "男",
+      "mac_code": "00-0C-29-12-34-56",
+      "china_county_level_region_code": "海淀区",
+      "passport_code": "G12345678",
+      "jdbc_url": "jdbc:mysql://localhost:3306/test?user=root&password=123456&useSSL=false&serverTimezone=UTC",
+      "cell_phone": "⁠138**5678‍‌﻿‍‍‍﻿‍‌​​‌‍‌‍‌‌‌‌﻿﻿‍‍​⁠",
+      "china_prefecture_level_region": "北京市",
+      "ip_code": "192.168.1.1",
+      "post_code": "100080",
+      "unified_social_credit": "91110108712345678X",
+      "mtp_for_hkmacao": "C123456(7)",
+      "phone_number": "010-12345678",
+      "bus_number": "京A12345",
+      "org_code": "12345678-X",
+      "573f1757ddf9eac3f4eaa4ff3f7587f7": "eyI4NTA2MjUwMjg0MjU1MCI6IuadqOWwj+iwqCIsIjg1MDYyNTAyODQyNzAwIjoiMTUwNTIzMjAwMjAxMjIxMjA3IiwiODUwNjI1MDI4NDMzNTAiOiIxMzgxMjM0NTY3OCJ9"
+    }
+  }
+  const _obj = {
+    "bus_number": "京A12345",
+    "org_code": "12345678-X",
+    kk: JSON.stringify({
+      "573f1757ddf9eac3f4eaa4ff3f7587f7": "eyI4NTA2MjUwMjg0MjU1MCI6IuadqOWwj+iwqCIsIjg1MDYyNTAyODQyNzAwIjoiMTUwNTIzMjAwMjAxMjIxMjA3IiwiODUwNjI1MDI4NDMzNTAiOiIxMzgxMjM0NTY3OCJ9",
+      "ll": "ll"
+    })
+  }
+ /* const slideWrap = document.getElementById("slide-wrap");
+  const slide = slideWrap.querySelector(".slide");
+  const canvansDom = document.getElementById("canvans");
+  var columns = [
+    {
+      label: "姓名",
+      key: "name",
+    },
+    {
+      label: "年龄",
+      key: "age",
+    },
+    {
+      label: "学校",
+      key: "school",
+    },
+    {
+      label: "分数",
+      key: "source",
+    },
+    {
+      label: "操作",
+      slot: "options",
+    },
+  ];
+  const mockData = [
+    {
+      name: "张三",
+      id: 0,
+      age: 0,
+      school: "公众号：Web技术学苑",
+      source: 800,
+    },
+  ];
+  var tableData = new Array(30).fill(mockData[0]).map((v, index) => {
+    return {
+      ...v,
+      id: index,
+      name: `${v.name}-${index + 1}`,
+      age: v.age + index + 1,
+      source: v.source + index + 1,
+    };
+  });
+  const table = {
+    rowHeight: 30,
+    headerHight: 30,
+    columns,
+    tableData,
+  };
+  const canvans = new CanvasTable({
+    el: canvansDom,
+    slideWrap,
+    slide,
+    table,
+    touchCanvans: true,
+  });
+
+  canvansDom.addEventListener("click", e => {
+    console.log("canvansDom Listen", e.target)
+  })
+  console.log("canvansDom x y", canvansDom.getBoundingClientRect())*/
+</script>
+</body>
+</html>

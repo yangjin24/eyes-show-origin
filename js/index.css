@@ -1,0 +1,106 @@
+.eyes-8942-outer, .eyes-8942-text {
+    font-size: inherit;
+}
+
+.eyes-8942-wrapper {
+    position: relative;
+    font-size: inherit;
+}
+
+.eyes-8942-wrapper:hover .eyes-8942-icon {
+    display: inline-block;
+}
+
+/* eye图标的样式 */
+.eyes-8942-icon {
+    position: fixed; /* 改为固定定位 */
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    cursor: pointer;
+    display: none;
+    font-style: normal;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: opacity 0.3s ease; /* 平滑过渡 */
+    z-index: 9999;
+}
+
+/* 当需要显示eye图标时，可以通过类来控制 */
+.show-eye-icon .eyes-8942-icon {
+    display: inline-block;
+}
+
+.origin-8942-text {
+    height: 24px;
+    line-height: 24px;
+    display: none;
+    position: absolute;
+    left: 0;
+    bottom: -44px;
+    white-space: nowrap;
+    padding: 4px 8px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #000 !important;
+    box-sizing: content-box;
+    background-color: #F3FCFF;
+    border-radius: 4px;
+    border: 1px solid #e8e8e8;
+    z-index: 9999;
+}
+
+/* Tooltip容器 */
+.eyes-8942-tooltip {
+    position: absolute;
+    visibility: hidden;
+    min-width: 20px;
+    height: 24px;
+    line-height: 24px;
+    padding: 5px 8px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #000 !important;
+    box-sizing: content-box;
+    background-color: #F3FCFF;
+    border-radius: 5px;
+    border: 1px solid #e8e8e8;
+    white-space: nowrap;
+    word-wrap: break-word;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+}
+
+/* Tooltip visible state */
+.eyes-8942-tooltip.show {
+    visibility: visible;
+}
+
+/* Tooltip arrow */
+.eyes-8942-tooltip::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 5px 5px 0 5px;
+    border-color: #F3FCFF transparent transparent transparent;
+    top: 100%;
+    left: 10px;
+    margin-left: -5px;
+}
+
+.global-eye-8942-icon {
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    font-style: normal;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: opacity 0.3s ease; /* 平滑过渡 */
+}
