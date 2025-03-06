@@ -95,67 +95,13 @@
     </style>
     <script type="text/javascript" src="./js/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="./js/CanvasTable.js"></script>
-    <link rel="stylesheet" href="./js/indexCopy.css" type="text/css"></link>
-    <script type="text/javascript" src="./js/indexCopy.js"></script>
+    <link rel="stylesheet" href="./js/index.css" type="text/css"></link>
+    <script type="text/javascript" src="./js/index.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
 </head>
 
 <body>
-<div id="app" class="test-overflow">
-    <div style="margin-top: 40px">
-        姓名：⁠杨**‍‌﻿‍‍‍﻿‍‌​​‌‍‌‍‌‌‌‌‌​﻿‍​⁠，手机号：⁠150523**1207‍‌﻿‍‍‍﻿‍‌​​‌‍‌‍‌‌‌‌‍‍‌﻿‌⁠
-    </div>
-    <div id="rrr">
-        <span class="my-css">
-            <span>
-            ⁠150523**1207‍‌﻿‍‍‍﻿‍‌​​‌‍‌‍‌‌‌‌‍‍‌﻿‌⁠
-            </span>
-        </span>
-    </div>
-    <table class="t-table">
-        <thead>
-        <th>
-            ⁠150523**1207‍‌﻿‍‍‍﻿‍‌​​‌‍‌‍‌‌‌‌‍‍‌﻿‌⁠
-        </th>
-        <th>名称</th>
-        <th>备注</th>
-        <th>操作</th>
-        </thead>
-        <tbody>
-        <tr>
-            <td>1</td>
-            <td>⁠150523**1207‍‌﻿‍‍‍﻿‍‌​​‌‍‌‍‌‌‌‌‍‍‌﻿‌⁠</td>
-            <td>介绍信息</td>
-            <td><a>编辑</a> ｜ <a>删除</a></td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>Tom2</td>
-            <td>介绍****xxxxxxxx介绍信息</td>
-            <td><a>编辑</a> ｜ <a>删除</a></td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>Tom3</td>
-            <td>介绍信息</td>
-            <td><a>编辑</a> ｜ <a>删除</a></td>
-        </tr>
-        </tbody>
-    </table>
-    <!--<div style="height: 50px;width: 500px;overflow: auto;margin-top: 100px">
-        <div style="height: 100px;width: 100%;"></div>
-        <input value="⁠杨**‍‌﻿‍‍‍﻿‍‌​​‌‍‌‍‌‌‌‌‌​﻿‍​⁠">
-    </div>-->
-    <!--<div class="content-table">
-        <canvas id="canvans" width="600" height="300"></canvas>
-        &lt;!&ndash;-自定义滚动条&ndash;&gt;
-        <div id="slide-wrap" style="transform: translateY(0)">
-            <div class="slide"></div>
-        </div>
-    </div>-->
-
-    <iframe src="https://172.16.43.250:8441/apiAudit/index.html#/"></iframe>
-</div>
-<script type="text/javascript">
+<script>
   setTimeout(() => {
     fetch("https://jsonplaceholder.typicode.com/todos/1")
       .then(function (response) {
@@ -216,67 +162,199 @@
       "ll": "ll"
     })
   }
- /* const slideWrap = document.getElementById("slide-wrap");
-  const slide = slideWrap.querySelector(".slide");
-  const canvansDom = document.getElementById("canvans");
-  var columns = [
-    {
-      label: "姓名",
-      key: "name",
-    },
-    {
-      label: "年龄",
-      key: "age",
-    },
-    {
-      label: "学校",
-      key: "school",
-    },
-    {
-      label: "分数",
-      key: "source",
-    },
-    {
-      label: "操作",
-      slot: "options",
-    },
-  ];
-  const mockData = [
-    {
-      name: "张三",
-      id: 0,
-      age: 0,
-      school: "公众号：Web技术学苑",
-      source: 800,
-    },
-  ];
-  var tableData = new Array(30).fill(mockData[0]).map((v, index) => {
-    return {
-      ...v,
-      id: index,
-      name: `${v.name}-${index + 1}`,
-      age: v.age + index + 1,
-      source: v.source + index + 1,
-    };
-  });
-  const table = {
-    rowHeight: 30,
-    headerHight: 30,
-    columns,
-    tableData,
-  };
-  const canvans = new CanvasTable({
-    el: canvansDom,
-    slideWrap,
-    slide,
-    table,
-    touchCanvans: true,
-  });
+  /* const slideWrap = document.getElementById("slide-wrap");
+   const slide = slideWrap.querySelector(".slide");
+   const canvansDom = document.getElementById("canvans");
+   var columns = [
+     {
+       label: "姓名",
+       key: "name",
+     },
+     {
+       label: "年龄",
+       key: "age",
+     },
+     {
+       label: "学校",
+       key: "school",
+     },
+     {
+       label: "分数",
+       key: "source",
+     },
+     {
+       label: "操作",
+       slot: "options",
+     },
+   ];
+   const mockData = [
+     {
+       name: "张三",
+       id: 0,
+       age: 0,
+       school: "公众号：Web技术学苑",
+       source: 800,
+     },
+   ];
+   var tableData = new Array(30).fill(mockData[0]).map((v, index) => {
+     return {
+       ...v,
+       id: index,
+       name: `${v.name}-${index + 1}`,
+       age: v.age + index + 1,
+       source: v.source + index + 1,
+     };
+   });
+   const table = {
+     rowHeight: 30,
+     headerHight: 30,
+     columns,
+     tableData,
+   };
+   const canvans = new CanvasTable({
+     el: canvansDom,
+     slideWrap,
+     slide,
+     table,
+     touchCanvans: true,
+   });
 
-  canvansDom.addEventListener("click", e => {
-    console.log("canvansDom Listen", e.target)
-  })
-  console.log("canvansDom x y", canvansDom.getBoundingClientRect())*/
+   canvansDom.addEventListener("click", e => {
+     console.log("canvansDom Listen", e.target)
+   })
+   console.log("canvansDom x y", canvansDom.getBoundingClientRect())*/
+</script>
+<!-- 引入 Vue.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.14/vue.min.js"></script>
+<!-- 引入 Element UI -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<div id="app" class="test-overflow">
+    <el-button type="primary" @click="updateData">更新</el-button>
+    <template>
+        <el-table
+            :data="tableData"
+            style="width: 100%">
+            <el-table-column
+                column-key="id"
+                prop="name"
+                label="姓名"
+                width="180">
+
+            </el-table-column>
+            <el-table-column
+                prop="remark"
+                label="备注">
+            </el-table-column>
+        </el-table>
+    </template>
+    <div style="margin-top: 40px">
+        姓名：⁠杨**‍‌﻿‍‍‍﻿‍‌​​‌‍‌‍‌‌‌‌‌​﻿‍​⁠，手机号：⁠150523**1207‍‌﻿‍‍‍﻿‍‌​​‌‍‌‍‌‌‌‌‍‍‌﻿‌⁠
+    </div>
+    <div id="rrr">
+        <span class="my-css">
+            <span>
+            ⁠150523**1207‍‌﻿‍‍‍﻿‍‌​​‌‍‌‍‌‌‌‌‍‍‌﻿‌⁠
+            </span>
+        </span>
+    </div>
+    <table class="t-table">
+        <thead>
+        <th>
+            ⁠150523**1207‍‌﻿‍‍‍﻿‍‌​​‌‍‌‍‌‌‌‌‍‍‌﻿‌⁠
+        </th>
+        <th>名称</th>
+        <th>备注</th>
+        <th>操作</th>
+        </thead>
+        <tbody>
+        <tr>
+            <td>1</td>
+            <td>⁠150523**1207‍‌﻿‍‍‍﻿‍‌​​‌‍‌‍‌‌‌‌‍‍‌﻿‌⁠</td>
+            <td>介绍信息</td>
+            <td><a>编辑</a> ｜ <a>删除</a></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Tom2</td>
+            <td>介绍****xxxxxxxx介绍信息</td>
+            <td><a>编辑</a> ｜ <a>删除</a></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Tom3</td>
+            <td>介绍信息</td>
+            <td><a>编辑</a> ｜ <a>删除</a></td>
+        </tr>
+        </tbody>
+    </table>
+    <!--<div style="height: 50px;width: 500px;overflow: auto;margin-top: 100px">
+        <div style="height: 100px;width: 100%;"></div>
+        <input value="⁠杨**‍‌﻿‍‍‍﻿‍‌​​‌‍‌‍‌‌‌‌‌​﻿‍​⁠">
+    </div>-->
+    <!--<div class="content-table">
+        <canvas id="canvans" width="600" height="300"></canvas>
+        &lt;!&ndash;-自定义滚动条&ndash;&gt;
+        <div id="slide-wrap" style="transform: translateY(0)">
+            <div class="slide"></div>
+        </div>
+    </div>-->
+
+    <!--    <iframe src="https://172.16.43.250:8441/apiAudit/index.html#/"></iframe>-->
+</div>
+
+<script>
+  // 创建 Vue 实例
+  new Vue({
+    el: '#app',
+    // 注册 Element UI 组件
+    components: {
+      'el-button': ELEMENT.Button,
+      'el-table': ELEMENT.Table,
+      'el-tooltip': ELEMENT.Tooltip,
+    },
+    data() {
+      return {
+        tableData: [{
+          id: 1,
+          name: '⁠150523**1207‍‌﻿‍‍‍﻿‍‌​​‌‍‌‍‌‌‌‌‍‍‌﻿‌⁠',
+          remark: '上海市普陀区金沙江路 1518 弄'
+        }, {
+          id: 2,
+          name: '王小虎1',
+          remark: '上海市普陀区金沙江路 1517 弄'
+        }, {
+          id: 3,
+          name: '王小虎',
+          remark: '上海市普陀区金沙江路 1519 弄'
+        }, {
+          id: 4,
+          name: '王小虎',
+          remark: '上海市普陀区金沙江路 1516 弄'
+        }],
+      };
+    },
+    methods: {
+      updateData() {
+        this.tableData = [{
+          id: 7,
+          name: '888',
+          remark: '上海市'
+        }, {
+          id: 8,
+          name: '王小虎1',
+          remark: '上海市普陀区'
+        }, {
+          id: 9,
+          name: '王小虎2',
+          remark: '上海市普陀区金沙江路 1519 弄'
+        }, {
+          id: 10,
+          name: '王小虎3',
+          remark: '上海市普陀区金沙江路 1516 弄'
+        }];
+      }
+    }
+  });
 </script>
 </body>
 </html>

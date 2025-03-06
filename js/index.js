@@ -88,6 +88,12 @@ function render_eyes_8942() {
             "ig"
           );
           if (node.nodeType == 3 && node.nodeValue) {
+            let _classList = node.parentNode.classList;
+            if (_classList && _classList.length && _classList.contains("el-tooltip__popper")) {
+              node = node.nextSibling;
+              continue;
+            }
+
             let splitByReg = node.nodeValue.split(reg);
             let nodeValueArr = node.nodeValue.match(reg);
             if (nodeValueArr && nodeValueArr.length) {
